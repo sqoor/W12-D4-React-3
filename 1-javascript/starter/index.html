@@ -17,17 +17,30 @@
     // Test whether you can reassign each of the variables
     // Log out each of the variables to the page
 
+    // const username = 'Abdullah';
+    let loggedIn = false;
+    const obj = { id: 1, title: 'some title' }
+    Object.freeze(obj);
+
+    username = 'Mo';
+    loggedIn = true;
+    obj.id = 2;
+    obj.title = 'another title';
+
+    console.log('username', username)
+    console.log('loggedIn', loggedIn)
+    console.log('obj', obj)
 
 
     // Practice 2 - Template Literals
     // Create a variable for firstName and lastName
-    // Create a variable called message that can be reassigned
+    // Use a temvariable called message that can be reassigned
     // Use a template literal to create message like "Hi firstName lastName!"
     // Log out the message to the console
-    const firstName = "";
-    const lastName = ""
+    const firstName = "Abdala";
+    const lastName = "Sqoor"
 
-    let message = ``;
+    let message = `Hi ${firstName} ${lastName}!`;
 
     console.log(message);
 
@@ -43,6 +56,7 @@
       )
     }
 
+     ArrowName = (name) => console.log(name);
 
 
     // Practice 4 - .filter() and .map()
@@ -65,6 +79,8 @@
       }
     ];
 
+    let filteredPost = posts.filter(elem => elem.title.search('post') !== -1)
+    filteredPost = filteredPost.map(elem => elem.title);
 
 
     // Practice 5 - DOM Creation
@@ -91,7 +107,17 @@
       }
     ];
 
+    postsArray.map(obj => {
+      const h2 = document.createElement('h2');
+      const a = document.createElement('a');
+      const title = document.createTextNode(obj.title);
+      const link = obj.slug;
 
+      a.href = link;
+      a.append(title);
+      h2.appendChild(a);
+      postsContainer.appendChild(h2);
+    })
   </script>
 </body>
 
