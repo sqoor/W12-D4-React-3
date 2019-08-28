@@ -18,6 +18,18 @@ class Practice2 extends React.Component {
     4. Take that and set it as the value of posts in state
     5  Add a catch to log out any errors
   */
+
+  componentDidMount() {
+    fetch("https://dev-react-explained-api.pantheonsite.io/wp-json/wp/v2/posts")
+    .then(res => res.json())
+    .then(result => {
+      this.setState({posts: result});
+    })
+    .catch(err => {
+      console.log(err);
+    })
+  }
+
   render() {
     return (
       <header>

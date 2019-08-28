@@ -36,6 +36,10 @@ class BarChart extends React.Component {
     4. If points has no remainder the return true
   */
 
+  shouldComponentUpdate(nextProps, nextProps) {
+    return nextProps.points % 5 === 0 ?  true : false;
+  }
+
   render() {
     const barStyles = {
       height: "200px",
