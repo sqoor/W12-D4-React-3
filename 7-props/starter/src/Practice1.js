@@ -5,10 +5,8 @@ const Practice1 = () => {
   const username = "zgordon";
   return (
     <div className="practice">
-      {/* 
-        1.Pass the id and username into <User /> as props 
-      */}
-      <User />
+      {/* 1.Pass the id and username into <User /> as props */ }
+      <User username={this.username}/>
     </div>
   );
 };
